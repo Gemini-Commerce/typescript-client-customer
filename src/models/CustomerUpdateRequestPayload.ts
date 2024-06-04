@@ -149,30 +149,6 @@ export interface CustomerUpdateRequestPayload {
      * @type {string}
      * @memberof CustomerUpdateRequestPayload
      */
-    'sdiCode'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerUpdateRequestPayload
-     */
-    'fiscalCode'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerUpdateRequestPayload
-     */
-    'companyName'?: string;
-    /**
-     * 
-     * @type {object}
-     * @memberof CustomerUpdateRequestPayload
-     */
-    'additionalInfo'?: object;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerUpdateRequestPayload
-     */
     'market'?: string;
     /**
      * 
@@ -180,10 +156,4 @@ export interface CustomerUpdateRequestPayload {
      * @memberof CustomerUpdateRequestPayload
      */
     'externalIds'?: { [key: string]: string; };
-    /**
-     * 
-     * @type {CustomerCreateConsentRequest}
-     * @memberof CustomerUpdateRequestPayload
-     */
-    'consent'?: CustomerCreateConsentRequest;
 }

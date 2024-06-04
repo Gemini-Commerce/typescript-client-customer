@@ -50,8 +50,8 @@ export interface CustomerFindManyRequest {
     'filter'?: CustomerFindManyRequestFilter;
     /**
      * 
-     * @type {string}
+     * @type {Array<string>}
      * @memberof CustomerFindManyRequest
      */
-    'filterMask'?: string;
+    'filterMask'?: Array<string>;
 }

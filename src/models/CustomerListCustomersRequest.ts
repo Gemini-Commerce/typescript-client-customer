@@ -44,8 +44,8 @@ export interface CustomerListCustomersRequest {
     'filters'?: CustomerListCustomersRequestFilter;
     /**
      * 
-     * @type {string}
+     * @type {Array<string>}
      * @memberof CustomerListCustomersRequest
      */
-    'filterMask'?: string;
+    'filterMask'?: Array<string>;
 }

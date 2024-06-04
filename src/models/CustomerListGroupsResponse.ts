@@ -24,10 +24,4 @@ export interface CustomerListGroupsResponse {
      * @memberof CustomerListGroupsResponse
      */
     'groups'?: Array<CustomerGroupResponse>;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerListGroupsResponse
-     */
-    'nextPageToken'?: string;
 }

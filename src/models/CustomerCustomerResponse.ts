@@ -179,30 +179,6 @@ export interface CustomerCustomerResponse {
      * @type {string}
      * @memberof CustomerCustomerResponse
      */
-    'sdiCode'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerCustomerResponse
-     */
-    'fiscalCode'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerCustomerResponse
-     */
-    'companyName'?: string;
-    /**
-     * 
-     * @type {object}
-     * @memberof CustomerCustomerResponse
-     */
-    'additionalInfo'?: object;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerCustomerResponse
-     */
     'market'?: string;
     /**
      * 
@@ -216,16 +192,4 @@ export interface CustomerCustomerResponse {
      * @memberof CustomerCustomerResponse
      */
     'externalIds'?: { [key: string]: string; };
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerCustomerResponse
-     */
-    'agentGrn'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerCustomerResponse
-     */
-    'aggregationId'?: string;
 }

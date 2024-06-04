@@ -96,10 +96,4 @@ export interface CustomerSubscriberResponseWithNewsletterRequest {
      * @memberof CustomerSubscriberResponseWithNewsletterRequest
      */
     'newsletters'?: Array<CustomerNewsletterRequest>;
-    /**
-     * 
-     * @type {CustomerCreateConsentRequest}
-     * @memberof CustomerSubscriberResponseWithNewsletterRequest
-     */
-    'consent'?: CustomerCreateConsentRequest;
 }

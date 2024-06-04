@@ -32,8 +32,8 @@ export interface CustomerUpdateSubscriberRequest {
     'subscriber'?: CustomerSubscriberResponseWithNewsletterRequest;
     /**
      * 
-     * @type {string}
+     * @type {Array<string>}
      * @memberof CustomerUpdateSubscriberRequest
      */
-    'fieldMask'?: string;
+    'fieldMask'?: Array<string>;
 }
