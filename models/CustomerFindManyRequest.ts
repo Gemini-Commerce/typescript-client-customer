@@ -19,7 +19,7 @@ export class CustomerFindManyRequest {
     'pageSize'?: number;
     'pageToken'?: string;
     'filter'?: CustomerFindManyRequestFilter;
-    'filterMask'?: string;
+    'filterMask'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -57,7 +57,7 @@ export class CustomerFindManyRequest {
         {
             "name": "filterMask",
             "baseName": "filterMask",
-            "type": "string",
+            "type": "Array<string>",
             "format": ""
         }    ];
 

@@ -18,7 +18,7 @@ export class CustomerAddressUpdateRequest {
     'customerId'?: string;
     'id'?: string;
     'address'?: CustomerAddressEntity;
-    'fieldMask'?: string;
+    'fieldMask'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,7 +50,7 @@ export class CustomerAddressUpdateRequest {
         {
             "name": "fieldMask",
             "baseName": "fieldMask",
-            "type": "string",
+            "type": "Array<string>",
             "format": ""
         }    ];
 

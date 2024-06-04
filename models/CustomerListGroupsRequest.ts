@@ -10,15 +10,10 @@
  * Do not edit the class manually.
  */
 
-import { CustomerListGroupsRequestFilter } from '../models/CustomerListGroupsRequestFilter';
 import { HttpFile } from '../http/http';
 
 export class CustomerListGroupsRequest {
     'tenantId'?: string;
-    'pageSize'?: number;
-    'pageToken'?: string;
-    'filter'?: CustomerListGroupsRequestFilter;
-    'filtersMask'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -26,30 +21,6 @@ export class CustomerListGroupsRequest {
         {
             "name": "tenantId",
             "baseName": "tenantId",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "pageSize",
-            "baseName": "pageSize",
-            "type": "number",
-            "format": "int64"
-        },
-        {
-            "name": "pageToken",
-            "baseName": "pageToken",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "filter",
-            "baseName": "filter",
-            "type": "CustomerListGroupsRequestFilter",
-            "format": ""
-        },
-        {
-            "name": "filtersMask",
-            "baseName": "filtersMask",
             "type": "string",
             "format": ""
         }    ];

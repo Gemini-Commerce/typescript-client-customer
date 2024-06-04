@@ -11,7 +11,6 @@
  */
 
 import { CustomerAddressEntity } from '../models/CustomerAddressEntity';
-import { CustomerCreateConsentRequest } from '../models/CustomerCreateConsentRequest';
 import { CustomerEMFields } from '../models/CustomerEMFields';
 import { CustomerNewsletterRequest } from '../models/CustomerNewsletterRequest';
 import { CustomerPassword } from '../models/CustomerPassword';
@@ -40,13 +39,8 @@ export class CustomerUpdateRequestPayload {
     'preferredLocale'?: string;
     'taxCode'?: string;
     'certifiedEmail'?: string;
-    'sdiCode'?: string;
-    'fiscalCode'?: string;
-    'companyName'?: string;
-    'additionalInfo'?: any;
     'market'?: string;
     'externalIds'?: { [key: string]: string; };
-    'consent'?: CustomerCreateConsentRequest;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -178,30 +172,6 @@ export class CustomerUpdateRequestPayload {
             "format": ""
         },
         {
-            "name": "sdiCode",
-            "baseName": "sdiCode",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "fiscalCode",
-            "baseName": "fiscalCode",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "companyName",
-            "baseName": "companyName",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "additionalInfo",
-            "baseName": "additionalInfo",
-            "type": "any",
-            "format": ""
-        },
-        {
             "name": "market",
             "baseName": "market",
             "type": "string",
@@ -211,12 +181,6 @@ export class CustomerUpdateRequestPayload {
             "name": "externalIds",
             "baseName": "externalIds",
             "type": "{ [key: string]: string; }",
-            "format": ""
-        },
-        {
-            "name": "consent",
-            "baseName": "consent",
-            "type": "CustomerCreateConsentRequest",
             "format": ""
         }    ];
 

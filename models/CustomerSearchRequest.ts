@@ -20,7 +20,7 @@ export class CustomerSearchRequest {
     'pageSize'?: number;
     'pageToken'?: string;
     'filter'?: CustomerSearchRequestFilter;
-    'filterMask'?: string;
+    'filterMask'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -64,7 +64,7 @@ export class CustomerSearchRequest {
         {
             "name": "filterMask",
             "baseName": "filterMask",
-            "type": "string",
+            "type": "Array<string>",
             "format": ""
         }    ];
 
