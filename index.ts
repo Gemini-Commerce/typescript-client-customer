@@ -12,22 +12,7 @@
  * Do not edit the class manually.
  */
 
-/**
- * 
- * @export
- * @interface ListCustomersRequestFilterDate
- */
-export interface ListCustomersRequestFilterDate {
-    /**
-     * 
-     * @type {Date}
-     * @memberof ListCustomersRequestFilterDate
-     */
-    'from'?: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof ListCustomersRequestFilterDate
-     */
-    'to'?: Date;
-}
+
+export * from "./api";
+export * from "./configuration";
+
