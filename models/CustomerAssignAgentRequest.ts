@@ -10,15 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { CustomerListCustomersRequestFilter } from '../models/CustomerListCustomersRequestFilter';
 import { HttpFile } from '../http/http';
 
-export class CustomerListCustomersRequest {
+export class CustomerAssignAgentRequest {
     'tenantId'?: string;
-    'pageSize'?: number;
-    'pageToken'?: string;
-    'filters'?: CustomerListCustomersRequestFilter;
-    'filterMask'?: string;
+    'agentGrn'?: string;
+    'customerIds'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,32 +27,20 @@ export class CustomerListCustomersRequest {
             "format": ""
         },
         {
-            "name": "pageSize",
-            "baseName": "pageSize",
-            "type": "number",
-            "format": "int64"
-        },
-        {
-            "name": "pageToken",
-            "baseName": "pageToken",
+            "name": "agentGrn",
+            "baseName": "agentGrn",
             "type": "string",
             "format": ""
         },
         {
-            "name": "filters",
-            "baseName": "filters",
-            "type": "CustomerListCustomersRequestFilter",
-            "format": ""
-        },
-        {
-            "name": "filterMask",
-            "baseName": "filterMask",
-            "type": "string",
+            "name": "customerIds",
+            "baseName": "customerIds",
+            "type": "Array<string>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return CustomerListCustomersRequest.attributeTypeMap;
+        return CustomerAssignAgentRequest.attributeTypeMap;
     }
 
     public constructor() {

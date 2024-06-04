@@ -10,31 +10,23 @@
  * Do not edit the class manually.
  */
 
-import { CustomerGroupResponse } from '../models/CustomerGroupResponse';
 import { HttpFile } from '../http/http';
 
-export class CustomerListGroupsResponse {
-    'groups'?: Array<CustomerGroupResponse>;
-    'nextPageToken'?: string;
+export class ListConsentsRequestFilters {
+    'subjectIds'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "groups",
-            "baseName": "groups",
-            "type": "Array<CustomerGroupResponse>",
-            "format": ""
-        },
-        {
-            "name": "nextPageToken",
-            "baseName": "nextPageToken",
-            "type": "string",
+            "name": "subjectIds",
+            "baseName": "subjectIds",
+            "type": "Array<string>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return CustomerListGroupsResponse.attributeTypeMap;
+        return ListConsentsRequestFilters.attributeTypeMap;
     }
 
     public constructor() {

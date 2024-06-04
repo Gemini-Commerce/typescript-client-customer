@@ -10,15 +10,17 @@
  * Do not edit the class manually.
  */
 
-import { CustomerListCustomersRequestFilter } from '../models/CustomerListCustomersRequestFilter';
+import { ListConsentsRequestFilters } from '../models/ListConsentsRequestFilters';
+import { ListConsentsRequestSort } from '../models/ListConsentsRequestSort';
 import { HttpFile } from '../http/http';
 
-export class CustomerListCustomersRequest {
+export class CustomerListConsentsRequest {
     'tenantId'?: string;
     'pageSize'?: number;
     'pageToken'?: string;
-    'filters'?: CustomerListCustomersRequestFilter;
-    'filterMask'?: string;
+    'sorts'?: Array<ListConsentsRequestSort>;
+    'filtersMask'?: string;
+    'filters'?: ListConsentsRequestFilters;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -42,20 +44,26 @@ export class CustomerListCustomersRequest {
             "format": ""
         },
         {
-            "name": "filters",
-            "baseName": "filters",
-            "type": "CustomerListCustomersRequestFilter",
+            "name": "sorts",
+            "baseName": "sorts",
+            "type": "Array<ListConsentsRequestSort>",
             "format": ""
         },
         {
-            "name": "filterMask",
-            "baseName": "filterMask",
+            "name": "filtersMask",
+            "baseName": "filtersMask",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "filters",
+            "baseName": "filters",
+            "type": "ListConsentsRequestFilters",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return CustomerListCustomersRequest.attributeTypeMap;
+        return CustomerListConsentsRequest.attributeTypeMap;
     }
 
     public constructor() {

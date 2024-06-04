@@ -16,7 +16,7 @@ import { HttpFile } from '../http/http';
 export class CustomerUpdateSubscriberRequest {
     'tenantId'?: string;
     'subscriber'?: CustomerSubscriberResponseWithNewsletterRequest;
-    'fieldMask'?: Array<string>;
+    'fieldMask'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,7 +36,7 @@ export class CustomerUpdateSubscriberRequest {
         {
             "name": "fieldMask",
             "baseName": "fieldMask",
-            "type": "Array<string>",
+            "type": "string",
             "format": ""
         }    ];
 

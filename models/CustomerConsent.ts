@@ -10,69 +10,71 @@
  * Do not edit the class manually.
  */
 
-import { CustomerSearchRequestFilter } from '../models/CustomerSearchRequestFilter';
+import { CustomerConsentSource } from '../models/CustomerConsentSource';
 import { HttpFile } from '../http/http';
 
-export class CustomerSearchRequest {
-    'tenantId'?: string;
-    'query'?: string;
-    'groupId'?: string;
-    'pageSize'?: number;
-    'pageToken'?: string;
-    'filter'?: CustomerSearchRequestFilter;
-    'filterMask'?: string;
+export class CustomerConsent {
+    'id'?: string;
+    'grn'?: string;
+    'preferences'?: { [key: string]: boolean; };
+    'createdAt'?: Date;
+    'source'?: CustomerConsentSource;
+    'author'?: string;
+    'subjectId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "tenantId",
-            "baseName": "tenantId",
+            "name": "id",
+            "baseName": "id",
             "type": "string",
             "format": ""
         },
         {
-            "name": "query",
-            "baseName": "query",
+            "name": "grn",
+            "baseName": "grn",
             "type": "string",
             "format": ""
         },
         {
-            "name": "groupId",
-            "baseName": "groupId",
+            "name": "preferences",
+            "baseName": "preferences",
+            "type": "{ [key: string]: boolean; }",
+            "format": ""
+        },
+        {
+            "name": "createdAt",
+            "baseName": "createdAt",
+            "type": "Date",
+            "format": "date-time"
+        },
+        {
+            "name": "source",
+            "baseName": "source",
+            "type": "CustomerConsentSource",
+            "format": ""
+        },
+        {
+            "name": "author",
+            "baseName": "author",
             "type": "string",
             "format": ""
         },
         {
-            "name": "pageSize",
-            "baseName": "pageSize",
-            "type": "number",
-            "format": "int64"
-        },
-        {
-            "name": "pageToken",
-            "baseName": "pageToken",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "filter",
-            "baseName": "filter",
-            "type": "CustomerSearchRequestFilter",
-            "format": ""
-        },
-        {
-            "name": "filterMask",
-            "baseName": "filterMask",
+            "name": "subjectId",
+            "baseName": "subjectId",
             "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return CustomerSearchRequest.attributeTypeMap;
+        return CustomerConsent.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
+
+
 
