@@ -10,8 +10,12 @@ export * from '../models/CustomerAddressEntity';
 export * from '../models/CustomerAddressEntityKind';
 export * from '../models/CustomerAddressUpdateRequest';
 export * from '../models/CustomerAddressUpdateResponse';
+export * from '../models/CustomerAssignAgentRequest';
 export * from '../models/CustomerBulkUpdateRequest';
 export * from '../models/CustomerBulkUpdateResponse';
+export * from '../models/CustomerConsent';
+export * from '../models/CustomerConsentSource';
+export * from '../models/CustomerCreateConsentRequest';
 export * from '../models/CustomerCreateGroupRequest';
 export * from '../models/CustomerCreateRequest';
 export * from '../models/CustomerCreateSubscriberRequest';
@@ -30,10 +34,13 @@ export * from '../models/CustomerGetGroupByCodeRequest';
 export * from '../models/CustomerGetGroupByIdRequest';
 export * from '../models/CustomerGrantPermissionsRequest';
 export * from '../models/CustomerGroupResponse';
+export * from '../models/CustomerListConsentsRequest';
+export * from '../models/CustomerListConsentsResponse';
 export * from '../models/CustomerListCustomersRequest';
 export * from '../models/CustomerListCustomersRequestFilter';
 export * from '../models/CustomerListCustomersResponse';
 export * from '../models/CustomerListGroupsRequest';
+export * from '../models/CustomerListGroupsRequestFilter';
 export * from '../models/CustomerListGroupsResponse';
 export * from '../models/CustomerNewsletterRequest';
 export * from '../models/CustomerNewsletterResponse';
@@ -50,6 +57,7 @@ export * from '../models/CustomerSetPermissionsRequest';
 export * from '../models/CustomerSubscriberRequest';
 export * from '../models/CustomerSubscriberResponse';
 export * from '../models/CustomerSubscriberResponseWithNewsletterRequest';
+export * from '../models/CustomerUnassignAgentRequest';
 export * from '../models/CustomerUnsubscribeRequest';
 export * from '../models/CustomerUnsubscribeResponse';
 export * from '../models/CustomerUpdateGroupRequest';
@@ -58,9 +66,14 @@ export * from '../models/CustomerUpdateRequest';
 export * from '../models/CustomerUpdateRequestPayload';
 export * from '../models/CustomerUpdateSubscriberRequest';
 export * from '../models/GooglerpcStatus';
+export * from '../models/ListConsentsRequestFilters';
+export * from '../models/ListConsentsRequestSort';
 export * from '../models/ListCustomersRequestFilterDate';
 export * from '../models/PasswordPasswordType';
 export * from '../models/ProtobufAny';
+export * from '../models/ProtobufNullValue';
+export * from '../models/SortSortField';
+export * from '../models/SortSortOrder';
 
 import { BulkUpdateRequestAction } from '../models/BulkUpdateRequestAction';
 import { CustomerAddCustomerToGroupRequest } from '../models/CustomerAddCustomerToGroupRequest';
@@ -74,8 +87,12 @@ import { CustomerAddressEntity                } from '../models/CustomerAddressE
 import { CustomerAddressEntityKind } from '../models/CustomerAddressEntityKind';
 import { CustomerAddressUpdateRequest } from '../models/CustomerAddressUpdateRequest';
 import { CustomerAddressUpdateResponse } from '../models/CustomerAddressUpdateResponse';
+import { CustomerAssignAgentRequest } from '../models/CustomerAssignAgentRequest';
 import { CustomerBulkUpdateRequest    } from '../models/CustomerBulkUpdateRequest';
 import { CustomerBulkUpdateResponse } from '../models/CustomerBulkUpdateResponse';
+import { CustomerConsent        } from '../models/CustomerConsent';
+import { CustomerConsentSource } from '../models/CustomerConsentSource';
+import { CustomerCreateConsentRequest } from '../models/CustomerCreateConsentRequest';
 import { CustomerCreateGroupRequest } from '../models/CustomerCreateGroupRequest';
 import { CustomerCreateRequest } from '../models/CustomerCreateRequest';
 import { CustomerCreateSubscriberRequest } from '../models/CustomerCreateSubscriberRequest';
@@ -94,10 +111,13 @@ import { CustomerGetGroupByCodeRequest } from '../models/CustomerGetGroupByCodeR
 import { CustomerGetGroupByIdRequest } from '../models/CustomerGetGroupByIdRequest';
 import { CustomerGrantPermissionsRequest } from '../models/CustomerGrantPermissionsRequest';
 import { CustomerGroupResponse } from '../models/CustomerGroupResponse';
+import { CustomerListConsentsRequest } from '../models/CustomerListConsentsRequest';
+import { CustomerListConsentsResponse } from '../models/CustomerListConsentsResponse';
 import { CustomerListCustomersRequest } from '../models/CustomerListCustomersRequest';
 import { CustomerListCustomersRequestFilter } from '../models/CustomerListCustomersRequestFilter';
 import { CustomerListCustomersResponse } from '../models/CustomerListCustomersResponse';
 import { CustomerListGroupsRequest } from '../models/CustomerListGroupsRequest';
+import { CustomerListGroupsRequestFilter } from '../models/CustomerListGroupsRequestFilter';
 import { CustomerListGroupsResponse } from '../models/CustomerListGroupsResponse';
 import { CustomerNewsletterRequest } from '../models/CustomerNewsletterRequest';
 import { CustomerNewsletterResponse } from '../models/CustomerNewsletterResponse';
@@ -114,6 +134,7 @@ import { CustomerSetPermissionsRequest } from '../models/CustomerSetPermissionsR
 import { CustomerSubscriberRequest } from '../models/CustomerSubscriberRequest';
 import { CustomerSubscriberResponse } from '../models/CustomerSubscriberResponse';
 import { CustomerSubscriberResponseWithNewsletterRequest } from '../models/CustomerSubscriberResponseWithNewsletterRequest';
+import { CustomerUnassignAgentRequest } from '../models/CustomerUnassignAgentRequest';
 import { CustomerUnsubscribeRequest } from '../models/CustomerUnsubscribeRequest';
 import { CustomerUnsubscribeResponse } from '../models/CustomerUnsubscribeResponse';
 import { CustomerUpdateGroupRequest } from '../models/CustomerUpdateGroupRequest';
@@ -122,9 +143,14 @@ import { CustomerUpdateRequest } from '../models/CustomerUpdateRequest';
 import { CustomerUpdateRequestPayload } from '../models/CustomerUpdateRequestPayload';
 import { CustomerUpdateSubscriberRequest } from '../models/CustomerUpdateSubscriberRequest';
 import { GooglerpcStatus } from '../models/GooglerpcStatus';
+import { ListConsentsRequestFilters } from '../models/ListConsentsRequestFilters';
+import { ListConsentsRequestSort   } from '../models/ListConsentsRequestSort';
 import { ListCustomersRequestFilterDate } from '../models/ListCustomersRequestFilterDate';
 import { PasswordPasswordType } from '../models/PasswordPasswordType';
 import { ProtobufAny } from '../models/ProtobufAny';
+import { ProtobufNullValue } from '../models/ProtobufNullValue';
+import { SortSortField } from '../models/SortSortField';
+import { SortSortOrder } from '../models/SortSortOrder';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -143,8 +169,12 @@ let enumsMap: Set<string> = new Set<string>([
     "CustomerAddressCreateRequestKind",
     "CustomerAddressCustomerResponseKind",
     "CustomerAddressEntityKind",
+    "CustomerConsentSource",
     "CustomerPermission",
     "PasswordPasswordType",
+    "ProtobufNullValue",
+    "SortSortField",
+    "SortSortOrder",
 ]);
 
 let typeMap: {[index: string]: any} = {
@@ -156,8 +186,11 @@ let typeMap: {[index: string]: any} = {
     "CustomerAddressEntity": CustomerAddressEntity,
     "CustomerAddressUpdateRequest": CustomerAddressUpdateRequest,
     "CustomerAddressUpdateResponse": CustomerAddressUpdateResponse,
+    "CustomerAssignAgentRequest": CustomerAssignAgentRequest,
     "CustomerBulkUpdateRequest": CustomerBulkUpdateRequest,
     "CustomerBulkUpdateResponse": CustomerBulkUpdateResponse,
+    "CustomerConsent": CustomerConsent,
+    "CustomerCreateConsentRequest": CustomerCreateConsentRequest,
     "CustomerCreateGroupRequest": CustomerCreateGroupRequest,
     "CustomerCreateRequest": CustomerCreateRequest,
     "CustomerCreateSubscriberRequest": CustomerCreateSubscriberRequest,
@@ -176,10 +209,13 @@ let typeMap: {[index: string]: any} = {
     "CustomerGetGroupByIdRequest": CustomerGetGroupByIdRequest,
     "CustomerGrantPermissionsRequest": CustomerGrantPermissionsRequest,
     "CustomerGroupResponse": CustomerGroupResponse,
+    "CustomerListConsentsRequest": CustomerListConsentsRequest,
+    "CustomerListConsentsResponse": CustomerListConsentsResponse,
     "CustomerListCustomersRequest": CustomerListCustomersRequest,
     "CustomerListCustomersRequestFilter": CustomerListCustomersRequestFilter,
     "CustomerListCustomersResponse": CustomerListCustomersResponse,
     "CustomerListGroupsRequest": CustomerListGroupsRequest,
+    "CustomerListGroupsRequestFilter": CustomerListGroupsRequestFilter,
     "CustomerListGroupsResponse": CustomerListGroupsResponse,
     "CustomerNewsletterRequest": CustomerNewsletterRequest,
     "CustomerNewsletterResponse": CustomerNewsletterResponse,
@@ -195,6 +231,7 @@ let typeMap: {[index: string]: any} = {
     "CustomerSubscriberRequest": CustomerSubscriberRequest,
     "CustomerSubscriberResponse": CustomerSubscriberResponse,
     "CustomerSubscriberResponseWithNewsletterRequest": CustomerSubscriberResponseWithNewsletterRequest,
+    "CustomerUnassignAgentRequest": CustomerUnassignAgentRequest,
     "CustomerUnsubscribeRequest": CustomerUnsubscribeRequest,
     "CustomerUnsubscribeResponse": CustomerUnsubscribeResponse,
     "CustomerUpdateGroupRequest": CustomerUpdateGroupRequest,
@@ -203,6 +240,8 @@ let typeMap: {[index: string]: any} = {
     "CustomerUpdateRequestPayload": CustomerUpdateRequestPayload,
     "CustomerUpdateSubscriberRequest": CustomerUpdateSubscriberRequest,
     "GooglerpcStatus": GooglerpcStatus,
+    "ListConsentsRequestFilters": ListConsentsRequestFilters,
+    "ListConsentsRequestSort": ListConsentsRequestSort,
     "ListCustomersRequestFilterDate": ListCustomersRequestFilterDate,
     "ProtobufAny": ProtobufAny,
 }

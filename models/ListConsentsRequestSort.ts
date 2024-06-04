@@ -10,34 +10,37 @@
  * Do not edit the class manually.
  */
 
-import { CustomerGroupResponse } from '../models/CustomerGroupResponse';
+import { SortSortField } from '../models/SortSortField';
+import { SortSortOrder } from '../models/SortSortOrder';
 import { HttpFile } from '../http/http';
 
-export class CustomerListGroupsResponse {
-    'groups'?: Array<CustomerGroupResponse>;
-    'nextPageToken'?: string;
+export class ListConsentsRequestSort {
+    'field'?: SortSortField;
+    'order'?: SortSortOrder;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "groups",
-            "baseName": "groups",
-            "type": "Array<CustomerGroupResponse>",
+            "name": "field",
+            "baseName": "field",
+            "type": "SortSortField",
             "format": ""
         },
         {
-            "name": "nextPageToken",
-            "baseName": "nextPageToken",
-            "type": "string",
+            "name": "order",
+            "baseName": "order",
+            "type": "SortSortOrder",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return CustomerListGroupsResponse.attributeTypeMap;
+        return ListConsentsRequestSort.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
+
+
 

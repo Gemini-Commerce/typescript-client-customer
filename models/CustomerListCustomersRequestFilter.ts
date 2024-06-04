@@ -17,6 +17,7 @@ export class CustomerListCustomersRequestFilter {
     'genders'?: Array<string>;
     'createdAt'?: Array<ListCustomersRequestFilterDate>;
     'countries'?: Array<string>;
+    'agentGrn'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -37,6 +38,12 @@ export class CustomerListCustomersRequestFilter {
             "name": "countries",
             "baseName": "countries",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "agentGrn",
+            "baseName": "agentGrn",
+            "type": "string",
             "format": ""
         }    ];
 

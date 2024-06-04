@@ -14,6 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class CustomerSearchRequestFilter {
     'newsletter'?: boolean;
+    'agentGrn'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -22,6 +23,12 @@ export class CustomerSearchRequestFilter {
             "name": "newsletter",
             "baseName": "newsletter",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "agentGrn",
+            "baseName": "agentGrn",
+            "type": "string",
             "format": ""
         }    ];
 

@@ -11,6 +11,7 @@
  */
 
 import { CustomerAddressEntity } from '../models/CustomerAddressEntity';
+import { CustomerCreateConsentRequest } from '../models/CustomerCreateConsentRequest';
 import { CustomerEMFields } from '../models/CustomerEMFields';
 import { CustomerNewsletterRequest } from '../models/CustomerNewsletterRequest';
 import { CustomerPassword } from '../models/CustomerPassword';
@@ -40,7 +41,13 @@ export class CustomerCreateRequest {
     'preferredLocale'?: string;
     'taxCode'?: string;
     'certifiedEmail'?: string;
+    'sdiCode'?: string;
+    'fiscalCode'?: string;
+    'companyName'?: string;
+    'additionalInfo'?: any;
     'externalIds'?: { [key: string]: string; };
+    'consent'?: CustomerCreateConsentRequest;
+    'aggregationId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -178,9 +185,45 @@ export class CustomerCreateRequest {
             "format": ""
         },
         {
+            "name": "sdiCode",
+            "baseName": "sdiCode",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "fiscalCode",
+            "baseName": "fiscalCode",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "companyName",
+            "baseName": "companyName",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "additionalInfo",
+            "baseName": "additionalInfo",
+            "type": "any",
+            "format": ""
+        },
+        {
             "name": "externalIds",
             "baseName": "externalIds",
             "type": "{ [key: string]: string; }",
+            "format": ""
+        },
+        {
+            "name": "consent",
+            "baseName": "consent",
+            "type": "CustomerCreateConsentRequest",
+            "format": ""
+        },
+        {
+            "name": "aggregationId",
+            "baseName": "aggregationId",
+            "type": "string",
             "format": ""
         }    ];
 

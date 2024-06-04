@@ -17,7 +17,7 @@ export class CustomerUpdateGroupRequest {
     'tenantId'?: string;
     'groupId'?: string;
     'payload'?: CustomerUpdateGroupRequestPayload;
-    'fieldMask'?: Array<string>;
+    'fieldMask'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -43,7 +43,7 @@ export class CustomerUpdateGroupRequest {
         {
             "name": "fieldMask",
             "baseName": "fieldMask",
-            "type": "Array<string>",
+            "type": "string",
             "format": ""
         }    ];
 

@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { CustomerCreateConsentRequest } from '../models/CustomerCreateConsentRequest';
 import { CustomerEMFields } from '../models/CustomerEMFields';
 import { CustomerNewsletterRequest } from '../models/CustomerNewsletterRequest';
 import { HttpFile } from '../http/http';
@@ -28,6 +29,7 @@ export class CustomerSubscriberRequest {
     'newsletters'?: Array<CustomerNewsletterRequest>;
     'market'?: string;
     'preferredLocale'?: string;
+    'consent'?: CustomerCreateConsentRequest;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -108,6 +110,12 @@ export class CustomerSubscriberRequest {
             "name": "preferredLocale",
             "baseName": "preferredLocale",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "consent",
+            "baseName": "consent",
+            "type": "CustomerCreateConsentRequest",
             "format": ""
         }    ];
 
