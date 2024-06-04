@@ -15,7 +15,6 @@ import { HttpFile } from '../http/http';
 
 export class CustomerListGroupsResponse {
     'groups'?: Array<CustomerGroupResponse>;
-    'nextPageToken'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,12 +23,6 @@ export class CustomerListGroupsResponse {
             "name": "groups",
             "baseName": "groups",
             "type": "Array<CustomerGroupResponse>",
-            "format": ""
-        },
-        {
-            "name": "nextPageToken",
-            "baseName": "nextPageToken",
-            "type": "string",
             "format": ""
         }    ];
 

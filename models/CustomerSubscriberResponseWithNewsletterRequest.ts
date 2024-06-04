@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-import { CustomerCreateConsentRequest } from '../models/CustomerCreateConsentRequest';
 import { CustomerEMFields } from '../models/CustomerEMFields';
 import { CustomerNewsletterRequest } from '../models/CustomerNewsletterRequest';
 import { HttpFile } from '../http/http';
@@ -29,7 +28,6 @@ export class CustomerSubscriberResponseWithNewsletterRequest {
     'createdAt'?: Date;
     'updatedAt'?: Date;
     'newsletters'?: Array<CustomerNewsletterRequest>;
-    'consent'?: CustomerCreateConsentRequest;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -110,12 +108,6 @@ export class CustomerSubscriberResponseWithNewsletterRequest {
             "name": "newsletters",
             "baseName": "newsletters",
             "type": "Array<CustomerNewsletterRequest>",
-            "format": ""
-        },
-        {
-            "name": "consent",
-            "baseName": "consent",
-            "type": "CustomerCreateConsentRequest",
             "format": ""
         }    ];
 

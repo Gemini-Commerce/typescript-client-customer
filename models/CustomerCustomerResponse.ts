@@ -45,15 +45,9 @@ export class CustomerCustomerResponse {
     'attributes'?: { [key: string]: ProtobufAny; };
     'taxCode'?: string;
     'certifiedEmail'?: string;
-    'sdiCode'?: string;
-    'fiscalCode'?: string;
-    'companyName'?: string;
-    'additionalInfo'?: any;
     'market'?: string;
     'permissions'?: Array<CustomerPermission>;
     'externalIds'?: { [key: string]: string; };
-    'agentGrn'?: string;
-    'aggregationId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -215,30 +209,6 @@ export class CustomerCustomerResponse {
             "format": ""
         },
         {
-            "name": "sdiCode",
-            "baseName": "sdiCode",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "fiscalCode",
-            "baseName": "fiscalCode",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "companyName",
-            "baseName": "companyName",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "additionalInfo",
-            "baseName": "additionalInfo",
-            "type": "any",
-            "format": ""
-        },
-        {
             "name": "market",
             "baseName": "market",
             "type": "string",
@@ -254,18 +224,6 @@ export class CustomerCustomerResponse {
             "name": "externalIds",
             "baseName": "externalIds",
             "type": "{ [key: string]: string; }",
-            "format": ""
-        },
-        {
-            "name": "agentGrn",
-            "baseName": "agentGrn",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "aggregationId",
-            "baseName": "aggregationId",
-            "type": "string",
             "format": ""
         }    ];
 

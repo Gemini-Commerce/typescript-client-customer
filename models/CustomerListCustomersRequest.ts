@@ -18,7 +18,7 @@ export class CustomerListCustomersRequest {
     'pageSize'?: number;
     'pageToken'?: string;
     'filters'?: CustomerListCustomersRequestFilter;
-    'filterMask'?: string;
+    'filterMask'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -50,7 +50,7 @@ export class CustomerListCustomersRequest {
         {
             "name": "filterMask",
             "baseName": "filterMask",
-            "type": "string",
+            "type": "Array<string>",
             "format": ""
         }    ];
 
