@@ -24,4 +24,10 @@ export interface CustomerFindManyRequestFilter {
      * @memberof CustomerFindManyRequestFilter
      */
     'newsletter'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerFindManyRequestFilter
+     */
+    'agentGrn'?: string;
 }

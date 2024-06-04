@@ -15,19 +15,13 @@
 /**
  * 
  * @export
- * @interface CustomerListGroupsResponse
+ * @interface CustomerCreateConsentRequest
  */
-export interface CustomerListGroupsResponse {
+export interface CustomerCreateConsentRequest {
     /**
      * 
-     * @type {Array<CustomerGroupResponse>}
-     * @memberof CustomerListGroupsResponse
+     * @type {{ [key: string]: boolean; }}
+     * @memberof CustomerCreateConsentRequest
      */
-    'groups'?: Array<CustomerGroupResponse>;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerListGroupsResponse
-     */
-    'nextPageToken'?: string;
+    'preferences'?: { [key: string]: boolean; };
 }

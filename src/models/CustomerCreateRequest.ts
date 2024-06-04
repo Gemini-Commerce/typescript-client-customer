@@ -152,8 +152,44 @@ export interface CustomerCreateRequest {
     'certifiedEmail'?: string;
     /**
      * 
+     * @type {string}
+     * @memberof CustomerCreateRequest
+     */
+    'sdiCode'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerCreateRequest
+     */
+    'fiscalCode'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerCreateRequest
+     */
+    'companyName'?: string;
+    /**
+     * 
+     * @type {object}
+     * @memberof CustomerCreateRequest
+     */
+    'additionalInfo'?: object;
+    /**
+     * 
      * @type {{ [key: string]: string; }}
      * @memberof CustomerCreateRequest
      */
     'externalIds'?: { [key: string]: string; };
+    /**
+     * 
+     * @type {CustomerCreateConsentRequest}
+     * @memberof CustomerCreateRequest
+     */
+    'consent'?: CustomerCreateConsentRequest;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerCreateRequest
+     */
+    'aggregationId'?: string;
 }

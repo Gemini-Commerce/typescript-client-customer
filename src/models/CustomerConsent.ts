@@ -15,43 +15,49 @@
 /**
  * 
  * @export
- * @interface CustomerFindManyRequest
+ * @interface CustomerConsent
  */
-export interface CustomerFindManyRequest {
+export interface CustomerConsent {
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerConsent
      */
-    'tenantId'?: string;
+    'id'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerConsent
      */
-    'groupId'?: string;
+    'grn'?: string;
     /**
      * 
-     * @type {number}
-     * @memberof CustomerFindManyRequest
+     * @type {{ [key: string]: boolean; }}
+     * @memberof CustomerConsent
      */
-    'pageSize'?: number;
+    'preferences'?: { [key: string]: boolean; };
+    /**
+     * 
+     * @type {Date}
+     * @memberof CustomerConsent
+     */
+    'createdAt'?: Date;
+    /**
+     * 
+     * @type {CustomerConsentSource}
+     * @memberof CustomerConsent
+     */
+    'source'?: CustomerConsentSource;
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerConsent
      */
-    'pageToken'?: string;
-    /**
-     * 
-     * @type {CustomerFindManyRequestFilter}
-     * @memberof CustomerFindManyRequest
-     */
-    'filter'?: CustomerFindManyRequestFilter;
+    'author'?: string;
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerConsent
      */
-    'filterMask'?: string;
+    'subjectId'?: string;
 }

@@ -15,43 +15,43 @@
 /**
  * 
  * @export
- * @interface CustomerFindManyRequest
+ * @interface CustomerListConsentsRequest
  */
-export interface CustomerFindManyRequest {
+export interface CustomerListConsentsRequest {
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerListConsentsRequest
      */
     'tenantId'?: string;
     /**
      * 
-     * @type {string}
-     * @memberof CustomerFindManyRequest
-     */
-    'groupId'?: string;
-    /**
-     * 
      * @type {number}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerListConsentsRequest
      */
     'pageSize'?: number;
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerListConsentsRequest
      */
     'pageToken'?: string;
     /**
      * 
-     * @type {CustomerFindManyRequestFilter}
-     * @memberof CustomerFindManyRequest
+     * @type {Array<ListConsentsRequestSort>}
+     * @memberof CustomerListConsentsRequest
      */
-    'filter'?: CustomerFindManyRequestFilter;
+    'sorts'?: Array<ListConsentsRequestSort>;
     /**
      * 
      * @type {string}
-     * @memberof CustomerFindManyRequest
+     * @memberof CustomerListConsentsRequest
      */
-    'filterMask'?: string;
+    'filtersMask'?: string;
+    /**
+     * 
+     * @type {ListConsentsRequestFilters}
+     * @memberof CustomerListConsentsRequest
+     */
+    'filters'?: ListConsentsRequestFilters;
 }

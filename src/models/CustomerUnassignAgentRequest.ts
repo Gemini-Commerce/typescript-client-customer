@@ -15,25 +15,25 @@
 /**
  * 
  * @export
- * @interface CustomerUpdateSubscriberRequest
+ * @interface CustomerUnassignAgentRequest
  */
-export interface CustomerUpdateSubscriberRequest {
+export interface CustomerUnassignAgentRequest {
     /**
      * 
      * @type {string}
-     * @memberof CustomerUpdateSubscriberRequest
+     * @memberof CustomerUnassignAgentRequest
      */
     'tenantId'?: string;
     /**
      * 
-     * @type {CustomerSubscriberResponseWithNewsletterRequest}
-     * @memberof CustomerUpdateSubscriberRequest
+     * @type {string}
+     * @memberof CustomerUnassignAgentRequest
      */
-    'subscriber'?: CustomerSubscriberResponseWithNewsletterRequest;
+    'agentGrn'?: string;
     /**
      * 
-     * @type {string}
-     * @memberof CustomerUpdateSubscriberRequest
+     * @type {Array<string>}
+     * @memberof CustomerUnassignAgentRequest
      */
-    'fieldMask'?: string;
+    'customerIds'?: Array<string>;
 }

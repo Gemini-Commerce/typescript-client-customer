@@ -24,4 +24,28 @@ export interface CustomerListGroupsRequest {
      * @memberof CustomerListGroupsRequest
      */
     'tenantId'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CustomerListGroupsRequest
+     */
+    'pageSize'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerListGroupsRequest
+     */
+    'pageToken'?: string;
+    /**
+     * 
+     * @type {CustomerListGroupsRequestFilter}
+     * @memberof CustomerListGroupsRequest
+     */
+    'filter'?: CustomerListGroupsRequestFilter;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerListGroupsRequest
+     */
+    'filtersMask'?: string;
 }

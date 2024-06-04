@@ -22,6 +22,7 @@ import type {
   CustomerAddressDeleteResponse,
   CustomerAddressUpdateRequest,
   CustomerAddressUpdateResponse,
+  CustomerAssignAgentRequest,
   CustomerBulkUpdateRequest,
   CustomerBulkUpdateResponse,
   CustomerCreateGroupRequest,
@@ -40,6 +41,8 @@ import type {
   CustomerGetGroupByIdRequest,
   CustomerGrantPermissionsRequest,
   CustomerGroupResponse,
+  CustomerListConsentsRequest,
+  CustomerListConsentsResponse,
   CustomerListCustomersRequest,
   CustomerListCustomersResponse,
   CustomerListGroupsRequest,
@@ -52,6 +55,7 @@ import type {
   CustomerSetDefaultAddressRequest,
   CustomerSetPermissionsRequest,
   CustomerSubscriberResponse,
+  CustomerUnassignAgentRequest,
   CustomerUnsubscribeRequest,
   CustomerUnsubscribeResponse,
   CustomerUpdateGroupRequest,
@@ -74,6 +78,8 @@ import {
     CustomerAddressUpdateRequestToJSON,
     CustomerAddressUpdateResponseFromJSON,
     CustomerAddressUpdateResponseToJSON,
+    CustomerAssignAgentRequestFromJSON,
+    CustomerAssignAgentRequestToJSON,
     CustomerBulkUpdateRequestFromJSON,
     CustomerBulkUpdateRequestToJSON,
     CustomerBulkUpdateResponseFromJSON,
@@ -110,6 +116,10 @@ import {
     CustomerGrantPermissionsRequestToJSON,
     CustomerGroupResponseFromJSON,
     CustomerGroupResponseToJSON,
+    CustomerListConsentsRequestFromJSON,
+    CustomerListConsentsRequestToJSON,
+    CustomerListConsentsResponseFromJSON,
+    CustomerListConsentsResponseToJSON,
     CustomerListCustomersRequestFromJSON,
     CustomerListCustomersRequestToJSON,
     CustomerListCustomersResponseFromJSON,
@@ -134,6 +144,8 @@ import {
     CustomerSetPermissionsRequestToJSON,
     CustomerSubscriberResponseFromJSON,
     CustomerSubscriberResponseToJSON,
+    CustomerUnassignAgentRequestFromJSON,
+    CustomerUnassignAgentRequestToJSON,
     CustomerUnsubscribeRequestFromJSON,
     CustomerUnsubscribeRequestToJSON,
     CustomerUnsubscribeResponseFromJSON,
@@ -152,7 +164,15 @@ export interface CustomerAcquireSubscriberRequest {
     body: CustomerCreateSubscriberRequest;
 }
 
+export interface CustomerAcquireSubscriber2Request {
+    body: CustomerCreateSubscriberRequest;
+}
+
 export interface CustomerAcquireUnsubscriberRequest {
+    body: CustomerUnsubscribeRequest;
+}
+
+export interface CustomerAcquireUnsubscriber2Request {
     body: CustomerUnsubscribeRequest;
 }
 
@@ -160,7 +180,19 @@ export interface CustomerAddCustomerToGroupOperationRequest {
     body: CustomerAddCustomerToGroupRequest;
 }
 
+export interface CustomerAddCustomerToGroup2Request {
+    body: CustomerAddCustomerToGroupRequest;
+}
+
+export interface CustomerAssignAgentOperationRequest {
+    body: CustomerAssignAgentRequest;
+}
+
 export interface CustomerBulkUpdateOperationRequest {
+    body: CustomerBulkUpdateRequest;
+}
+
+export interface CustomerBulkUpdate2Request {
     body: CustomerBulkUpdateRequest;
 }
 
@@ -168,7 +200,15 @@ export interface CustomerCreateOperationRequest {
     body: CustomerCreateRequest;
 }
 
+export interface CustomerCreate2Request {
+    body: CustomerCreateRequest;
+}
+
 export interface CustomerCreateAddressRequest {
+    body: CustomerAddressCreateRequest;
+}
+
+export interface CustomerCreateAddress2Request {
     body: CustomerAddressCreateRequest;
 }
 
@@ -176,7 +216,15 @@ export interface CustomerCreateGroupOperationRequest {
     body: CustomerCreateGroupRequest;
 }
 
+export interface CustomerCreateGroup2Request {
+    body: CustomerCreateGroupRequest;
+}
+
 export interface CustomerCreateSubscriberOperationRequest {
+    body: CustomerCreateSubscriberRequest;
+}
+
+export interface CustomerCreateSubscriber2Request {
     body: CustomerCreateSubscriberRequest;
 }
 
@@ -184,7 +232,15 @@ export interface CustomerDeleteAddressRequest {
     body: CustomerAddressDeleteRequest;
 }
 
+export interface CustomerDeleteAddress2Request {
+    body: CustomerAddressDeleteRequest;
+}
+
 export interface CustomerDeleteGroupOperationRequest {
+    body: CustomerDeleteGroupRequest;
+}
+
+export interface CustomerDeleteGroup2Request {
     body: CustomerDeleteGroupRequest;
 }
 
@@ -192,7 +248,15 @@ export interface CustomerFindRequest {
     body: CustomerFindManyRequest;
 }
 
+export interface CustomerFind2Request {
+    body: CustomerFindManyRequest;
+}
+
 export interface CustomerFindByEmailOperationRequest {
+    body: CustomerFindByEmailRequest;
+}
+
+export interface CustomerFindByEmail2Request {
     body: CustomerFindByEmailRequest;
 }
 
@@ -200,7 +264,15 @@ export interface CustomerFindByIdOperationRequest {
     body: CustomerFindByIdRequest;
 }
 
+export interface CustomerFindById2Request {
+    body: CustomerFindByIdRequest;
+}
+
 export interface CustomerFindSubscriberByEmailOperationRequest {
+    body: CustomerFindSubscriberByEmailRequest;
+}
+
+export interface CustomerFindSubscriberByEmail2Request {
     body: CustomerFindSubscriberByEmailRequest;
 }
 
@@ -208,7 +280,15 @@ export interface CustomerFindSubscriberByIdOperationRequest {
     body: CustomerFindSubscriberByIdRequest;
 }
 
+export interface CustomerFindSubscriberById2Request {
+    body: CustomerFindSubscriberByIdRequest;
+}
+
 export interface CustomerGetGroupByCodeOperationRequest {
+    body: CustomerGetGroupByCodeRequest;
+}
+
+export interface CustomerGetGroupByCode2Request {
     body: CustomerGetGroupByCodeRequest;
 }
 
@@ -216,11 +296,27 @@ export interface CustomerGetGroupByIdOperationRequest {
     body: CustomerGetGroupByIdRequest;
 }
 
+export interface CustomerGetGroupById2Request {
+    body: CustomerGetGroupByIdRequest;
+}
+
 export interface CustomerGrantPermissionsOperationRequest {
     body: CustomerGrantPermissionsRequest;
 }
 
+export interface CustomerGrantPermissions2Request {
+    body: CustomerGrantPermissionsRequest;
+}
+
+export interface CustomerListConsentsOperationRequest {
+    body: CustomerListConsentsRequest;
+}
+
 export interface CustomerListCustomersOperationRequest {
+    body: CustomerListCustomersRequest;
+}
+
+export interface CustomerListCustomers2Request {
     body: CustomerListCustomersRequest;
 }
 
@@ -228,7 +324,15 @@ export interface CustomerListGroupsOperationRequest {
     body: CustomerListGroupsRequest;
 }
 
+export interface CustomerListGroups2Request {
+    body: CustomerListGroupsRequest;
+}
+
 export interface CustomerRemoveCustomerFromGroupOperationRequest {
+    body: CustomerRemoveCustomerFromGroupRequest;
+}
+
+export interface CustomerRemoveCustomerFromGroup2Request {
     body: CustomerRemoveCustomerFromGroupRequest;
 }
 
@@ -236,7 +340,15 @@ export interface CustomerRemoveDefaultAddressOperationRequest {
     body: CustomerRemoveDefaultAddressRequest;
 }
 
+export interface CustomerRemoveDefaultAddress2Request {
+    body: CustomerRemoveDefaultAddressRequest;
+}
+
 export interface CustomerRevokePermissionsOperationRequest {
+    body: CustomerRevokePermissionsRequest;
+}
+
+export interface CustomerRevokePermissions2Request {
     body: CustomerRevokePermissionsRequest;
 }
 
@@ -244,7 +356,15 @@ export interface CustomerSearchOperationRequest {
     body: CustomerSearchRequest;
 }
 
+export interface CustomerSearch2Request {
+    body: CustomerSearchRequest;
+}
+
 export interface CustomerSetDefaultAddressOperationRequest {
+    body: CustomerSetDefaultAddressRequest;
+}
+
+export interface CustomerSetDefaultAddress2Request {
     body: CustomerSetDefaultAddressRequest;
 }
 
@@ -252,7 +372,19 @@ export interface CustomerSetPermissionsOperationRequest {
     body: CustomerSetPermissionsRequest;
 }
 
+export interface CustomerSetPermissions2Request {
+    body: CustomerSetPermissionsRequest;
+}
+
+export interface CustomerUnassignAgentOperationRequest {
+    body: CustomerUnassignAgentRequest;
+}
+
 export interface CustomerUnsubscribeOperationRequest {
+    body: CustomerUnsubscribeRequest;
+}
+
+export interface CustomerUnsubscribe2Request {
     body: CustomerUnsubscribeRequest;
 }
 
@@ -260,7 +392,15 @@ export interface CustomerUpdateOperationRequest {
     body: CustomerUpdateRequest;
 }
 
+export interface CustomerUpdate2Request {
+    body: CustomerUpdateRequest;
+}
+
 export interface CustomerUpdateAddressRequest {
+    body: CustomerAddressUpdateRequest;
+}
+
+export interface CustomerUpdateAddress2Request {
     body: CustomerAddressUpdateRequest;
 }
 
@@ -268,7 +408,15 @@ export interface CustomerUpdateGroupOperationRequest {
     body: CustomerUpdateGroupRequest;
 }
 
+export interface CustomerUpdateGroup2Request {
+    body: CustomerUpdateGroupRequest;
+}
+
 export interface CustomerUpdateSubscriberOperationRequest {
+    body: CustomerUpdateSubscriberRequest;
+}
+
+export interface CustomerUpdateSubscriber2Request {
     body: CustomerUpdateSubscriberRequest;
 }
 
@@ -290,8 +438,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/AcquireSubscriber`,
+            path: `/customer/acquire_subscriber`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -310,6 +462,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerAcquireSubscriber2Raw(requestParameters: CustomerAcquireSubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerAcquireSubscriber2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/AcquireSubscriber`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerCreateSubscriberRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerSubscriberResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerAcquireSubscriber2(requestParameters: CustomerAcquireSubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
+        const response = await this.customerAcquireSubscriber2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerAcquireUnsubscriberRaw(requestParameters: CustomerAcquireUnsubscriberRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerUnsubscribeResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerAcquireUnsubscriber.');
@@ -321,8 +508,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/AcquireUnsubscriber`,
+            path: `/customer/acquire_unsubscriber`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -341,6 +532,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerAcquireUnsubscriber2Raw(requestParameters: CustomerAcquireUnsubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerUnsubscribeResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerAcquireUnsubscriber2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/AcquireUnsubscriber`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerUnsubscribeRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerUnsubscribeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerAcquireUnsubscriber2(requestParameters: CustomerAcquireUnsubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerUnsubscribeResponse> {
+        const response = await this.customerAcquireUnsubscriber2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerAddCustomerToGroupRaw(requestParameters: CustomerAddCustomerToGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerAddCustomerToGroup.');
@@ -352,8 +578,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/AddCustomerToGroup`,
+            path: `/customer/add_customer_to_segment`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -372,6 +602,76 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerAddCustomerToGroup2Raw(requestParameters: CustomerAddCustomerToGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerAddCustomerToGroup2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/AddCustomerToGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerAddCustomerToGroupRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerAddCustomerToGroup2(requestParameters: CustomerAddCustomerToGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerGroupResponse> {
+        const response = await this.customerAddCustomerToGroup2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async customerAssignAgentRaw(requestParameters: CustomerAssignAgentOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerAssignAgent.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/AssignAgent`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerAssignAgentRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     */
+    async customerAssignAgent(requestParameters: CustomerAssignAgentOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerAssignAgentRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerBulkUpdateRaw(requestParameters: CustomerBulkUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerBulkUpdateResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerBulkUpdate.');
@@ -383,8 +683,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/BulkUpdate`,
+            path: `/customer/bulk_update`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -403,6 +707,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerBulkUpdate2Raw(requestParameters: CustomerBulkUpdate2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerBulkUpdateResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerBulkUpdate2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/BulkUpdate`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerBulkUpdateRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerBulkUpdateResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerBulkUpdate2(requestParameters: CustomerBulkUpdate2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerBulkUpdateResponse> {
+        const response = await this.customerBulkUpdate2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerCreateRaw(requestParameters: CustomerCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreate.');
@@ -414,8 +753,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/Create`,
+            path: `/customer/create`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -434,6 +777,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerCreate2Raw(requestParameters: CustomerCreate2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreate2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/Create`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerCreateRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerCreate2(requestParameters: CustomerCreate2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerCustomerResponse> {
+        const response = await this.customerCreate2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerCreateAddressRaw(requestParameters: CustomerCreateAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerAddressCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreateAddress.');
@@ -445,8 +823,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/CreateAddress`,
+            path: `/customer/create_address`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -465,6 +847,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerCreateAddress2Raw(requestParameters: CustomerCreateAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerAddressCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreateAddress2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/CreateAddress`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerAddressCreateRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerAddressCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerCreateAddress2(requestParameters: CustomerCreateAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerAddressCustomerResponse> {
+        const response = await this.customerCreateAddress2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerCreateGroupRaw(requestParameters: CustomerCreateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreateGroup.');
@@ -476,8 +893,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/CreateGroup`,
+            path: `/customer/create_segment`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -496,6 +917,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerCreateGroup2Raw(requestParameters: CustomerCreateGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreateGroup2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/CreateGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerCreateGroupRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerCreateGroup2(requestParameters: CustomerCreateGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerGroupResponse> {
+        const response = await this.customerCreateGroup2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerCreateSubscriberRaw(requestParameters: CustomerCreateSubscriberOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreateSubscriber.');
@@ -507,8 +963,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/CreateSubscriber`,
+            path: `/customer/create_subscriber`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -527,6 +987,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerCreateSubscriber2Raw(requestParameters: CustomerCreateSubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerCreateSubscriber2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/CreateSubscriber`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerCreateSubscriberRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerSubscriberResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerCreateSubscriber2(requestParameters: CustomerCreateSubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
+        const response = await this.customerCreateSubscriber2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerDeleteAddressRaw(requestParameters: CustomerDeleteAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerAddressDeleteResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerDeleteAddress.');
@@ -538,8 +1033,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/DeleteAddress`,
+            path: `/customer/delete_address`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -558,6 +1057,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerDeleteAddress2Raw(requestParameters: CustomerDeleteAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerAddressDeleteResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerDeleteAddress2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/DeleteAddress`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerAddressDeleteRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerAddressDeleteResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerDeleteAddress2(requestParameters: CustomerDeleteAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerAddressDeleteResponse> {
+        const response = await this.customerDeleteAddress2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerDeleteGroupRaw(requestParameters: CustomerDeleteGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerDeleteGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerDeleteGroup.');
@@ -569,8 +1103,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/DeleteGroup`,
+            path: `/customer/delete_segment`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -589,6 +1127,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerDeleteGroup2Raw(requestParameters: CustomerDeleteGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerDeleteGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerDeleteGroup2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/DeleteGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerDeleteGroupRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerDeleteGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerDeleteGroup2(requestParameters: CustomerDeleteGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerDeleteGroupResponse> {
+        const response = await this.customerDeleteGroup2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerFindRaw(requestParameters: CustomerFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerFindManyResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFind.');
@@ -600,8 +1173,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/Find`,
+            path: `/customer/find`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -620,6 +1197,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerFind2Raw(requestParameters: CustomerFind2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerFindManyResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFind2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/Find`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerFindManyRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerFindManyResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerFind2(requestParameters: CustomerFind2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerFindManyResponse> {
+        const response = await this.customerFind2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerFindByEmailRaw(requestParameters: CustomerFindByEmailOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindByEmail.');
@@ -631,8 +1243,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/FindByEmail`,
+            path: `/customer/find_by_email`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -651,6 +1267,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerFindByEmail2Raw(requestParameters: CustomerFindByEmail2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindByEmail2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/FindByEmail`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerFindByEmailRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerFindByEmail2(requestParameters: CustomerFindByEmail2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerCustomerResponse> {
+        const response = await this.customerFindByEmail2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerFindByIdRaw(requestParameters: CustomerFindByIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindById.');
@@ -662,8 +1313,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/FindById`,
+            path: `/customer/find_by_id`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -682,6 +1337,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerFindById2Raw(requestParameters: CustomerFindById2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindById2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/FindById`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerFindByIdRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerFindById2(requestParameters: CustomerFindById2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerCustomerResponse> {
+        const response = await this.customerFindById2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerFindSubscriberByEmailRaw(requestParameters: CustomerFindSubscriberByEmailOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindSubscriberByEmail.');
@@ -693,8 +1383,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/FindSubscriberByEmail`,
+            path: `/customer/find_subscriber_by_email`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -713,6 +1407,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerFindSubscriberByEmail2Raw(requestParameters: CustomerFindSubscriberByEmail2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindSubscriberByEmail2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/FindSubscriberByEmail`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerFindSubscriberByEmailRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerSubscriberResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerFindSubscriberByEmail2(requestParameters: CustomerFindSubscriberByEmail2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
+        const response = await this.customerFindSubscriberByEmail2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerFindSubscriberByIdRaw(requestParameters: CustomerFindSubscriberByIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindSubscriberById.');
@@ -724,8 +1453,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/FindSubscriberById`,
+            path: `/customer/find_subscriber_by_id`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -744,6 +1477,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerFindSubscriberById2Raw(requestParameters: CustomerFindSubscriberById2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerFindSubscriberById2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/FindSubscriberById`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerFindSubscriberByIdRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerSubscriberResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerFindSubscriberById2(requestParameters: CustomerFindSubscriberById2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
+        const response = await this.customerFindSubscriberById2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerGetGroupByCodeRaw(requestParameters: CustomerGetGroupByCodeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerGetGroupByCode.');
@@ -755,8 +1523,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/GetGroupByCode`,
+            path: `/customer/get_segment_by_code`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -775,6 +1547,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerGetGroupByCode2Raw(requestParameters: CustomerGetGroupByCode2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerGetGroupByCode2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/GetGroupByCode`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerGetGroupByCodeRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerGetGroupByCode2(requestParameters: CustomerGetGroupByCode2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerGroupResponse> {
+        const response = await this.customerGetGroupByCode2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerGetGroupByIdRaw(requestParameters: CustomerGetGroupByIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerGetGroupById.');
@@ -786,8 +1593,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/GetGroupById`,
+            path: `/customer/get_segment_by_id`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -805,7 +1616,41 @@ export class CustomerApi extends runtime.BaseAPI {
     }
 
     /**
-     * GrantPermissions add permissions to a customer
+     */
+    async customerGetGroupById2Raw(requestParameters: CustomerGetGroupById2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerGetGroupById2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/GetGroupById`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerGetGroupByIdRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerGetGroupById2(requestParameters: CustomerGetGroupById2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerGroupResponse> {
+        const response = await this.customerGetGroupById2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      */
     async customerGrantPermissionsRaw(requestParameters: CustomerGrantPermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
@@ -817,6 +1662,45 @@ export class CustomerApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer/grant_permissions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerGrantPermissionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     */
+    async customerGrantPermissions(requestParameters: CustomerGrantPermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerGrantPermissionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async customerGrantPermissions2Raw(requestParameters: CustomerGrantPermissions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerGrantPermissions2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/customer.Customer/GrantPermissions`,
@@ -830,10 +1714,46 @@ export class CustomerApi extends runtime.BaseAPI {
     }
 
     /**
-     * GrantPermissions add permissions to a customer
      */
-    async customerGrantPermissions(requestParameters: CustomerGrantPermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.customerGrantPermissionsRaw(requestParameters, initOverrides);
+    async customerGrantPermissions2(requestParameters: CustomerGrantPermissions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerGrantPermissions2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * ListConsents list all consents of a customer
+     */
+    async customerListConsentsRaw(requestParameters: CustomerListConsentsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerListConsentsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerListConsents.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/ListConsents`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerListConsentsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerListConsentsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * ListConsents list all consents of a customer
+     */
+    async customerListConsents(requestParameters: CustomerListConsentsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerListConsentsResponse> {
+        const response = await this.customerListConsentsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -850,8 +1770,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/ListCustomers`,
+            path: `/customer/list_customers`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -870,6 +1794,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerListCustomers2Raw(requestParameters: CustomerListCustomers2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerListCustomersResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerListCustomers2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/ListCustomers`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerListCustomersRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerListCustomersResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerListCustomers2(requestParameters: CustomerListCustomers2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerListCustomersResponse> {
+        const response = await this.customerListCustomers2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerListGroupsRaw(requestParameters: CustomerListGroupsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerListGroupsResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerListGroups.');
@@ -881,8 +1840,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/ListGroups`,
+            path: `/customer/list_segments`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -901,6 +1864,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerListGroups2Raw(requestParameters: CustomerListGroups2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerListGroupsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerListGroups2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/ListGroups`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerListGroupsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerListGroupsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerListGroups2(requestParameters: CustomerListGroups2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerListGroupsResponse> {
+        const response = await this.customerListGroups2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerRemoveCustomerFromGroupRaw(requestParameters: CustomerRemoveCustomerFromGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerRemoveCustomerFromGroup.');
@@ -912,8 +1910,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/RemoveCustomerFromGroup`,
+            path: `/customer/remove_customer_from_segment`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -932,6 +1934,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerRemoveCustomerFromGroup2Raw(requestParameters: CustomerRemoveCustomerFromGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerRemoveCustomerFromGroup2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/RemoveCustomerFromGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerRemoveCustomerFromGroupRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerRemoveCustomerFromGroup2(requestParameters: CustomerRemoveCustomerFromGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerGroupResponse> {
+        const response = await this.customerRemoveCustomerFromGroup2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerRemoveDefaultAddressRaw(requestParameters: CustomerRemoveDefaultAddressOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerRemoveDefaultAddress.');
@@ -943,8 +1980,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/RemoveDefaultAddress`,
+            path: `/customer/remove_default_address`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -962,7 +2003,41 @@ export class CustomerApi extends runtime.BaseAPI {
     }
 
     /**
-     * RevokePermissions remove permissions from a customer
+     */
+    async customerRemoveDefaultAddress2Raw(requestParameters: CustomerRemoveDefaultAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerRemoveDefaultAddress2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/RemoveDefaultAddress`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerRemoveDefaultAddressRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerRemoveDefaultAddress2(requestParameters: CustomerRemoveDefaultAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerCustomerResponse> {
+        const response = await this.customerRemoveDefaultAddress2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      */
     async customerRevokePermissionsRaw(requestParameters: CustomerRevokePermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
@@ -974,6 +2049,45 @@ export class CustomerApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer/revoke_permissions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerRevokePermissionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     */
+    async customerRevokePermissions(requestParameters: CustomerRevokePermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerRevokePermissionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async customerRevokePermissions2Raw(requestParameters: CustomerRevokePermissions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerRevokePermissions2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/customer.Customer/RevokePermissions`,
@@ -987,10 +2101,9 @@ export class CustomerApi extends runtime.BaseAPI {
     }
 
     /**
-     * RevokePermissions remove permissions from a customer
      */
-    async customerRevokePermissions(requestParameters: CustomerRevokePermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.customerRevokePermissionsRaw(requestParameters, initOverrides);
+    async customerRevokePermissions2(requestParameters: CustomerRevokePermissions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerRevokePermissions2Raw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -1007,8 +2120,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/Search`,
+            path: `/customer/search`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1027,6 +2144,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerSearch2Raw(requestParameters: CustomerSearch2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSearchResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerSearch2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/Search`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerSearchRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerSearchResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerSearch2(requestParameters: CustomerSearch2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSearchResponse> {
+        const response = await this.customerSearch2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerSetDefaultAddressRaw(requestParameters: CustomerSetDefaultAddressOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerSetDefaultAddress.');
@@ -1038,8 +2190,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/SetDefaultAddress`,
+            path: `/customer/set_default_address`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1057,7 +2213,41 @@ export class CustomerApi extends runtime.BaseAPI {
     }
 
     /**
-     * SetPermissions set permissions to a customer
+     */
+    async customerSetDefaultAddress2Raw(requestParameters: CustomerSetDefaultAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerSetDefaultAddress2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/SetDefaultAddress`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerSetDefaultAddressRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerSetDefaultAddress2(requestParameters: CustomerSetDefaultAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerCustomerResponse> {
+        const response = await this.customerSetDefaultAddress2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      */
     async customerSetPermissionsRaw(requestParameters: CustomerSetPermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
@@ -1069,6 +2259,45 @@ export class CustomerApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer/set_permissions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerSetPermissionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     */
+    async customerSetPermissions(requestParameters: CustomerSetPermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerSetPermissionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async customerSetPermissions2Raw(requestParameters: CustomerSetPermissions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerSetPermissions2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/customer.Customer/SetPermissions`,
@@ -1082,10 +2311,44 @@ export class CustomerApi extends runtime.BaseAPI {
     }
 
     /**
-     * SetPermissions set permissions to a customer
      */
-    async customerSetPermissions(requestParameters: CustomerSetPermissionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.customerSetPermissionsRaw(requestParameters, initOverrides);
+    async customerSetPermissions2(requestParameters: CustomerSetPermissions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerSetPermissions2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async customerUnassignAgentRaw(requestParameters: CustomerUnassignAgentOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUnassignAgent.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/UnassignAgent`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerUnassignAgentRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     */
+    async customerUnassignAgent(requestParameters: CustomerUnassignAgentOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.customerUnassignAgentRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -1102,8 +2365,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/Unsubscribe`,
+            path: `/customer/unsubscribe`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1122,6 +2389,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerUnsubscribe2Raw(requestParameters: CustomerUnsubscribe2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerUnsubscribeResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUnsubscribe2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/Unsubscribe`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerUnsubscribeRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerUnsubscribeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerUnsubscribe2(requestParameters: CustomerUnsubscribe2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerUnsubscribeResponse> {
+        const response = await this.customerUnsubscribe2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerUpdateRaw(requestParameters: CustomerUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdate.');
@@ -1133,8 +2435,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/Update`,
+            path: `/customer/update`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1153,6 +2459,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerUpdate2Raw(requestParameters: CustomerUpdate2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerCustomerResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdate2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/Update`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerUpdateRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerCustomerResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerUpdate2(requestParameters: CustomerUpdate2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerCustomerResponse> {
+        const response = await this.customerUpdate2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerUpdateAddressRaw(requestParameters: CustomerUpdateAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerAddressUpdateResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdateAddress.');
@@ -1164,8 +2505,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/UpdateAddress`,
+            path: `/customer/update_address`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1184,6 +2529,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerUpdateAddress2Raw(requestParameters: CustomerUpdateAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerAddressUpdateResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdateAddress2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/UpdateAddress`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerAddressUpdateRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerAddressUpdateResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerUpdateAddress2(requestParameters: CustomerUpdateAddress2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerAddressUpdateResponse> {
+        const response = await this.customerUpdateAddress2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerUpdateGroupRaw(requestParameters: CustomerUpdateGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdateGroup.');
@@ -1195,8 +2575,12 @@ export class CustomerApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
-            path: `/customer.Customer/UpdateGroup`,
+            path: `/customer/update_segment`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1215,6 +2599,41 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
+    async customerUpdateGroup2Raw(requestParameters: CustomerUpdateGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerGroupResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdateGroup2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer.Customer/UpdateGroup`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerUpdateGroupRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerGroupResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerUpdateGroup2(requestParameters: CustomerUpdateGroup2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerGroupResponse> {
+        const response = await this.customerUpdateGroup2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async customerUpdateSubscriberRaw(requestParameters: CustomerUpdateSubscriberOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdateSubscriber.');
@@ -1225,6 +2644,45 @@ export class CustomerApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/customer/update_subscriber`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomerUpdateSubscriberRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CustomerSubscriberResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async customerUpdateSubscriber(requestParameters: CustomerUpdateSubscriberOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
+        const response = await this.customerUpdateSubscriberRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async customerUpdateSubscriber2Raw(requestParameters: CustomerUpdateSubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CustomerSubscriberResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling customerUpdateSubscriber2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/customer.Customer/UpdateSubscriber`,
@@ -1239,8 +2697,8 @@ export class CustomerApi extends runtime.BaseAPI {
 
     /**
      */
-    async customerUpdateSubscriber(requestParameters: CustomerUpdateSubscriberOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
-        const response = await this.customerUpdateSubscriberRaw(requestParameters, initOverrides);
+    async customerUpdateSubscriber2(requestParameters: CustomerUpdateSubscriber2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CustomerSubscriberResponse> {
+        const response = await this.customerUpdateSubscriber2Raw(requestParameters, initOverrides);
         return await response.value();
     }
 

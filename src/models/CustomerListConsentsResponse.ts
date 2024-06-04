@@ -15,25 +15,19 @@
 /**
  * 
  * @export
- * @interface CustomerUpdateSubscriberRequest
+ * @interface CustomerListConsentsResponse
  */
-export interface CustomerUpdateSubscriberRequest {
+export interface CustomerListConsentsResponse {
+    /**
+     * 
+     * @type {Array<CustomerConsent>}
+     * @memberof CustomerListConsentsResponse
+     */
+    'consents'?: Array<CustomerConsent>;
     /**
      * 
      * @type {string}
-     * @memberof CustomerUpdateSubscriberRequest
+     * @memberof CustomerListConsentsResponse
      */
-    'tenantId'?: string;
-    /**
-     * 
-     * @type {CustomerSubscriberResponseWithNewsletterRequest}
-     * @memberof CustomerUpdateSubscriberRequest
-     */
-    'subscriber'?: CustomerSubscriberResponseWithNewsletterRequest;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerUpdateSubscriberRequest
-     */
-    'fieldMask'?: string;
+    'nextPageToken'?: string;
 }

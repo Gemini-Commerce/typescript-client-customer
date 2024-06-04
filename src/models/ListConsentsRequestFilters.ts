@@ -15,19 +15,13 @@
 /**
  * 
  * @export
- * @interface CustomerListGroupsResponse
+ * @interface ListConsentsRequestFilters
  */
-export interface CustomerListGroupsResponse {
+export interface ListConsentsRequestFilters {
     /**
      * 
-     * @type {Array<CustomerGroupResponse>}
-     * @memberof CustomerListGroupsResponse
+     * @type {Array<string>}
+     * @memberof ListConsentsRequestFilters
      */
-    'groups'?: Array<CustomerGroupResponse>;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerListGroupsResponse
-     */
-    'nextPageToken'?: string;
+    'subjectIds'?: Array<string>;
 }

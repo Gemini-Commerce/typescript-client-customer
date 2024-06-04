@@ -44,8 +44,8 @@ export interface CustomerAddressUpdateRequest {
     'address'?: CustomerAddressEntity;
     /**
      * 
-     * @type {Array<string>}
+     * @type {string}
      * @memberof CustomerAddressUpdateRequest
      */
-    'fieldMask'?: Array<string>;
+    'fieldMask'?: string;
 }

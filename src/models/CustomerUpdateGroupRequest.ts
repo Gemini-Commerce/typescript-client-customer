@@ -38,8 +38,8 @@ export interface CustomerUpdateGroupRequest {
     'payload'?: CustomerUpdateGroupRequestPayload;
     /**
      * 
-     * @type {Array<string>}
+     * @type {string}
      * @memberof CustomerUpdateGroupRequest
      */
-    'fieldMask'?: Array<string>;
+    'fieldMask'?: string;
 }

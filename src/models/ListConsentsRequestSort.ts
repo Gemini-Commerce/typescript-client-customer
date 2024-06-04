@@ -15,25 +15,19 @@
 /**
  * 
  * @export
- * @interface CustomerUpdateSubscriberRequest
+ * @interface ListConsentsRequestSort
  */
-export interface CustomerUpdateSubscriberRequest {
+export interface ListConsentsRequestSort {
     /**
      * 
-     * @type {string}
-     * @memberof CustomerUpdateSubscriberRequest
+     * @type {SortSortField}
+     * @memberof ListConsentsRequestSort
      */
-    'tenantId'?: string;
+    'field'?: SortSortField;
     /**
      * 
-     * @type {CustomerSubscriberResponseWithNewsletterRequest}
-     * @memberof CustomerUpdateSubscriberRequest
+     * @type {SortSortOrder}
+     * @memberof ListConsentsRequestSort
      */
-    'subscriber'?: CustomerSubscriberResponseWithNewsletterRequest;
-    /**
-     * 
-     * @type {string}
-     * @memberof CustomerUpdateSubscriberRequest
-     */
-    'fieldMask'?: string;
+    'order'?: SortSortOrder;
 }

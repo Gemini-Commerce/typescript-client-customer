@@ -36,4 +36,10 @@ export interface CustomerListCustomersRequestFilter {
      * @memberof CustomerListCustomersRequestFilter
      */
     'countries'?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomerListCustomersRequestFilter
+     */
+    'agentGrn'?: string;
 }

@@ -15,19 +15,13 @@
 /**
  * 
  * @export
- * @interface CustomerListGroupsResponse
+ * @interface CustomerListGroupsRequestFilter
  */
-export interface CustomerListGroupsResponse {
-    /**
-     * 
-     * @type {Array<CustomerGroupResponse>}
-     * @memberof CustomerListGroupsResponse
-     */
-    'groups'?: Array<CustomerGroupResponse>;
+export interface CustomerListGroupsRequestFilter {
     /**
      * 
      * @type {string}
-     * @memberof CustomerListGroupsResponse
+     * @memberof CustomerListGroupsRequestFilter
      */
-    'nextPageToken'?: string;
+    'searchTerm'?: string;
 }

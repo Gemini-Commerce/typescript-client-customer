@@ -96,4 +96,10 @@ export interface CustomerSubscriberRequest {
      * @memberof CustomerSubscriberRequest
      */
     'preferredLocale'?: string;
+    /**
+     * 
+     * @type {CustomerCreateConsentRequest}
+     * @memberof CustomerSubscriberRequest
+     */
+    'consent'?: CustomerCreateConsentRequest;
 }

@@ -56,8 +56,8 @@ export interface CustomerSearchRequest {
     'filter'?: CustomerSearchRequestFilter;
     /**
      * 
-     * @type {Array<string>}
+     * @type {string}
      * @memberof CustomerSearchRequest
      */
-    'filterMask'?: Array<string>;
+    'filterMask'?: string;
 }
